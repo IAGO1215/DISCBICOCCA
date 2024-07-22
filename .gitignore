@@ -1,3 +1,4 @@
-# Byte-compiled / optimized / DLL files
+# cache
 __pycache__/
-TEST.ipynb
+
+# TEST.ipynb
