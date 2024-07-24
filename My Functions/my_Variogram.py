@@ -40,7 +40,9 @@ def calc_Variogram_Parameters(band, coordinates, distance, resolution = 10, step
         temp_Bins = temp_Variogram.bins
         temp_Experimental = temp_Variogram.experimental
         temp_FittedModel = temp_Variogram.fitted_model
-        return temp_Range, temp_Nugget, temp_Sill, temp_Bins, temp_Experimental, temp_FittedModel
+        temp_Empiral_X = temp_Variogram.get_empirical()[0]
+        temp_Empiral_Y = temp_Variogram.get_empirical()[1]
+        return temp_Range, temp_Nugget, temp_Sill, temp_Bins, temp_Experimental, temp_FittedModel, temp_Empiral_X, temp_Empiral_Y
 
 # Get the semivariance of the distance equal to range in the experimental model
 def get_Semivar_Exp(distance, bins, experimental_model):

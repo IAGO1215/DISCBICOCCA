@@ -1,5 +1,5 @@
 # Description
-This github repository is built to calculate variogram and roman metrics, in order to evaluate the spatial representativeness of a site.   
+This github repository is built to calculate variogram and roman metrics, in order to evaluate the spatial representativeness of a group of field sites.   
 Currently it only supports Sentinel-2 images. 
 The spatial index utilized in this project is NIRv, of which the formula is NIRv = B8(radiance) * NDVI; while in the reference articles, surface albedo is the only spatial index being used instead. 
 
@@ -22,8 +22,10 @@ The spatial index utilized in this project is NIRv, of which the formula is NIRv
 4. Shapely
 5. GeoPandas
 6. Rasterio
-7. scipy
-8. skgstat
+7. lxml (pip)
+8. bs4
+9. scipy
+10. skgstat
 
 # Folder Structure
 DISC  
