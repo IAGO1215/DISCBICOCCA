@@ -14,7 +14,6 @@ start_Time = time.time()
 calval_Prototype = CALVALPrototype()
 # Read optional input
 config = configparser.ConfigParser()
-print(calval_Prototype.path_Optional)
 config.read(calval_Prototype.path_Optional)
 if config["OptionalInput"]["threshold_CV"]:
     calval_Prototype._threshold_CV = config["Optional Input"]["threshold_CV"]
@@ -119,16 +118,19 @@ df_Output = pd.DataFrame({
     "Valid Pixels L1C": list_ValidPixelsL1C,
     "Valid Pixels L2A": list_ValidPixelsL2A,
     "Valid Pixels Percentage L1C": list_ValidPercentageL1C,
-    "Valid Pixels Percentage L2a": list_ValidPercentageL2A,
+    "Valid Pixels Percentage L2A": list_ValidPercentageL2A,
     "CV": list_CV,
     "Flag": list_Flag
 })
 print(f"Please find the final output.csv in the following folder: {calval_Prototype.path_Output}")
 df_Output.to_csv(calval_Prototype.path_Output + "\\Output.csv", index = False)
+
+# Elapsed Time
 end_Time = time.time()
 elapsed_Time = end_Time - start_Time
 num_Sites = df_Site.shape[0]
 average_Time = elapsed_Time / num_Sites
+# Delete cache folder? 
 if calval_Prototype.bool_DeleteCache:
     del image_L1C_B08, image_L2A_B04, image_L2A_B08, image_NIRv, image_NIRv_ROI
     shutil.rmtree(calval_Prototype.path_Cache)
