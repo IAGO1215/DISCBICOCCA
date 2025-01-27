@@ -55,6 +55,9 @@ def get_Semivar_Exp(distance, bins, experimental_model):
     temp_Semivar_Exp = experimental_model[index]
     return temp_Semivar_Exp
 
+def calc_Mean(band):
+    return np.mean(band)
+
 def calc_STD(band):
     return np.std(band)
 
